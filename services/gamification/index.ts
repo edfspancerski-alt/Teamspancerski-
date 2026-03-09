@@ -1,38 +1,43 @@
 import { prisma } from '@repo/database';
 
-export const awardXP = async (userId: string, amount: number) => {
-  return await prisma.user.update({
-    where: { id: userId },
-    data: {
-      xp: { increment: amount },
-      lastActive: new Date(),
-    },
-  });
+export const handleXPEvent = async (userId: string, amount: number, reason: string) => {
+  await prisma.$transaction([
+    prisma.user.update({
+      where: { id: userId },
+      data: { xp: { increment: amount } },
+    }),
+    prisma.xPLog.create({
+      data: { userId, amount, reason },
+    }),
+  ]);
+
+  // Check for level up
+  const user = await prisma.user.findUnique({ where: { id: userId } });
+  if (user && user.xp >= user.level * 1000) {
+    await prisma.user.update({
+      where: { id: userId },
+      data: { level: { increment: 1 } },
+    });
+  }
 };
 
-export const checkAndAwardBadges = async (userId: string) => {
-  const user = await prisma.user.findUnique({
-    where: { id: userId },
-    include: { progress: true, badges: true },
-  });
-
+export const updateStreak = async (userId: string) => {
+  const user = await prisma.user.findUnique({ where: { id: userId } });
   if (!user) return;
 
-  const completedWorkouts = user.progress.filter(p => p.completed).length;
+  const lastActive = user.lastActive || new Date(0);
+  const now = new Date();
+  const diffDays = Math.floor((now.getTime() - lastActive.getTime()) / (1000 * 3600 * 24));
 
-  const badgeRules = [
-    { name: 'Primeiro Passo', requirement: 1, icon: '🏆' },
-    { name: 'Guerreiro Semanal', requirement: 7, icon: '🔥' },
-    { name: 'Mestre da Constância', requirement: 30, icon: '⭐' },
-  ];
-
-  for (const rule of badgeRules) {
-    if (completedWorkouts >= rule.requirement) {
-      const alreadyHas = user.badges.some(b => b.badgeId === rule.name); // Using name as ID for mock
-      if (!alreadyHas) {
-        // Award badge logic
-        console.log(`Awarding badge ${rule.name} to user ${userId}`);
-      }
-    }
+  if (diffDays === 1) {
+    await prisma.user.update({
+      where: { id: userId },
+      data: { streak: { increment: 1 }, lastActive: now },
+    });
+  } else if (diffDays > 1) {
+    await prisma.user.update({
+      where: { id: userId },
+      data: { streak: 1, lastActive: now },
+    });
   }
 };

@@ -1,42 +1,50 @@
-# Team Spancerski - Advanced AI Fitness SaaS Platform
+# Team Spancerski - Advanced Multi-Agent Distributed SaaS Architecture
 
-## Multi-Agent AI System
-The platform uses a sophisticated multi-agent architecture to provide an autonomous coaching experience:
-- **Coach Agent**: Generates periodized 8-12 week programs.
-- **Nutrition Agent**: Crafts meal plans and shopping lists.
-- **Progress Analyst**: Adjusts training variables based on performance.
-- **Recovery Coach**: Optimizes sleep and recovery protocols.
-- **Motivation Agent**: Daily psychological support and engagement.
-- **Body Analysis Agent**: Computer vision-based physique assessment (via GPT-4 Vision/CV).
+## 1. High-Level Design
+The platform follows a distributed microservices architecture designed for 1M+ users and high availability.
 
-## Core Systems
-### 1. Training & Adaptation
-- **Methodology**: Dorian Yates (HIT) + Pacholok (Biomechanics) + Modern Science.
-- **Adaptive Engine**: Real-time adjustments to load and volume based on user failure/progress.
-- **Video Player**: Adaptive streaming with automated progress tracking.
+### Distributed Patterns
+- **CQRS**: Separate read/write paths for optimal performance.
+- **Event Sourcing**: Critical business state transitions are captured as immutable events.
+- **Event-Driven Communication**: Services interact asynchronously via Redis Streams and BullMQ.
+- **Edge Computing**: Next.js middleware performs multi-tenant resolution and security checks at the edge.
 
-### 2. Nutrition & IA
-- Personalization based on weight, goal, restrictions, and monthly budget.
-- Automated Shopping Lists with estimated costs.
+## 2. Microservices (15 Services)
+- **auth-service**: JWT, OAuth, RBAC.
+- **user-service**: Profile, biometrics, and medical data.
+- **program-service**: Training programs and curriculum management.
+- **training-service**: Session tracking and adaptive training logic.
+- **nutrition-service**: Meal plans and macro calculations.
+- **ai-service**: Multi-agent orchestrator (Coach, Nutritionist, Analyst, etc.).
+- **video-service**: Distributed transcoding and adaptive streaming via Mux.
+- **community-service**: Social feed and real-time messaging.
+- **gamification-service**: XP, Levels, Streaks, and Badges.
+- **challenge-service**: Community missions and global leaderboards.
+- **affiliate-service**: Referral tracking and automatic commission logic.
+- **notification-service**: Large-scale push (FCM) and email delivery.
+- **analytics-service**: System-wide metrics (MRR, LTV, Retention).
+- **growth-engine**: Viral triggers and automated engagement workflows.
+- **tenant-service**: Multi-tenant isolation and white-label management.
 
-### 3. Growth & Monetization
-- **Affiliate System**: 30% recurring commission for user referrals.
-- **Gamification**: Challenges (30-day, Fat Loss, Glute) with rankings and XP.
-- **White Label**: Multi-tenant support for trainers to launch their own branded apps.
-- **Subscription**: Stripe-integrated Trimestral and Annual plans.
+## 3. Data Architecture
+- **Database (Prisma/PostgreSQL)**: Scalable relational schema with 60+ tables.
+- **Cache (Redis Cluster)**: Session storage, leaderboard caching, and AI response acceleration.
+- **Queues (BullMQ)**: Background processing for high-latency tasks.
 
-### 4. Community & Social
-- Feed, comments, likes, and real-time chat (WebSocket-ready).
-- Public profiles and challenge leaderboards.
+## 4. AI Multi-Agent Engine
+A specialized orchestrator coordinates 8 agents:
+- **Personal Trainer**: 8-12 week HIT/Biomechanics programming.
+- **Nutritionist**: Personalized macros and shopping lists.
+- **Progress Analyst**: Predictive training adaptation.
+- **Recovery Coach**: Sleep and stress optimization.
+- **Motivation Coach**: Psychological reinforcement.
+- **Content Creator**: Automated educational generation.
+- **Community Moderator**: Sentiment analysis and toxicity detection.
+- **Program Generator**: Dynamic workout assembly.
 
-## Scalability & Performance
-- **Infrastructure**: Next.js 14 App Router, Vercel, Neon PostgreSQL.
-- **Cache**: Redis support for session management and API response caching.
-- **Scalability**: Horizontal scaling ready, CDN for global delivery.
-
-## Deployment Instructions
-1. `npm install`
-2. `npx prisma generate`
-3. Configure `.env` (Stripe, OpenAI, Database).
-4. `npm run build`
-5. Deploy `apps/web` to Vercel.
+## 5. White Label System
+Multi-tenant isolation allows partners to run branded instances with custom:
+- Domains
+- Logos & Colors
+- Content & Programs
+- User Databases

@@ -7,6 +7,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// --- CORE ---
 enum Role {
   ADMIN
   COACH
@@ -14,240 +15,198 @@ enum Role {
 }
 
 model Tenant {
-  id          String   @id @default(cuid())
-  name        String
-  slug        String   @unique
-  logo        String?
-  primaryColor String?
-  domain      String?  @unique
-  users       User[]
-  programs    Program[]
-  challenges  Challenge[]
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id            String   @id @default(cuid())
+  name          String
+  slug          String   @unique
+  logo          String?
+  primaryColor  String?
+  domain        String?  @unique
+  users         User[]
+  programs      Program[]
+  challenges    Challenge[]
+  analytics     AnalyticsEvent[]
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 }
 
 model User {
-  id            String    @id @default(cuid())
-  email         String    @unique
-  password      String
-  name          String?
-  role          Role      @default(MEMBER)
+  id              String    @id @default(cuid())
+  email           String    @unique
+  password        String
+  name            String?
+  role            Role      @default(MEMBER)
 
-  // Profile
-  weight        Float?
-  height        Float?
-  age           Int?
-  goal          String?
-  dietaryRestrictions String?
-  budget        Float?
+  // Profile & Biometrics
+  profile         Profile?
+  measurements    BodyMeasurement[]
+  photos          Photo[]
+  analyses        BodyAnalysis[]
+
+  // Training & Progress
+  sessions        WorkoutSession[]
+  logs            WorkoutLog[]
+  progress        Progress[]
+
+  // Nutrition
+  nutritionPlans  NutritionPlan[]
+  foodLogs        FoodLog[]
+
+  // Social & Community
+  posts           Post[]
+  comments        Comment[]
+  messagesSent    Message[] @relation("SentMessages")
+  messagesRecv    Message[] @relation("ReceivedMessages")
 
   // Gamification
-  xp            Int       @default(0)
-  streak        Int       @default(0)
-  lastActive    DateTime?
+  xpLogs          XPLog[]
+  achievements    UserAchievement[]
+  badges          UserBadge[]
+  streak          Int       @default(0)
+  level           Int       @default(1)
+  xp              Int       @default(0)
 
-  tenantId      String
-  tenant        Tenant    @relation(fields: [tenantId], references: [id])
+  // Growth & Monetization
+  subscriptions   Subscription[]
+  affiliate       Affiliate?
+  referrals       Referral[] @relation("ReferredBy")
+  referredBy      Referral?  @relation("ReferredUser")
+  challengeParts  ChallengeParticipant[]
 
-  subscriptions Subscription[]
-  progress      Progress[]
-  posts         Post[]
-  comments      Comment[]
-  badges        UserBadge[]
-  nutritionPlans NutritionPlan[]
-  achievements  Achievement[]
-  mentorApps    MentorApplication[]
-  bodyAnalyses  BodyAnalysis[]
+  // System
+  tenantId        String
+  tenant          Tenant    @relation(fields: [tenantId], references: [id])
+  devices         Device[]
+  notifications   Notification[]
+  activity        UserActivity[]
 
-  // Growth
-  affiliate     Affiliate?
-  referrals     Referral[]
-  challenges    ChallengeParticipant[]
-
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
 }
 
+model Profile {
+  id              String   @id @default(cuid())
+  age             Int?
+  gender          String?
+  height          Float?
+  weight          Float?
+  bodyFat         Float?
+  goal            String?
+  experience      String?
+  location        String?  // HOME, GYM
+  equipment       Json?
+  restrictions    String?
+  budget          Float?
+  userId          String   @unique
+  user            User     @relation(fields: [userId], references: [id])
+}
+
+// --- TRAINING ---
 model Program {
-  id          String   @id @default(cuid())
-  title       String
-  description String?
-  thumbnail   String?
-  duration    Int      // Total days
-  difficulty  String
-
-  tenantId    String
-  tenant      Tenant   @relation(fields: [tenantId], references: [id])
-
-  modules     Module[]
-  challenges  Challenge[]
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id              String   @id @default(cuid())
+  title           String
+  description     String?
+  thumbnail       String?
+  durationWeeks   Int
+  difficulty      String
+  tenantId        String
+  tenant          Tenant   @relation(fields: [tenantId], references: [id])
+  modules         Module[]
+  challenges      Challenge[]
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model Module {
-  id          String   @id @default(cuid())
-  title       String
-  description String?
-  order       Int
-
-  programId   String
-  program     Program  @relation(fields: [programId], references: [id])
-
-  lessons     Lesson[]
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id              String   @id @default(cuid())
+  title           String
+  order           Int
+  programId       String
+  program         Program  @relation(fields: [programId], references: [id])
+  lessons         Lesson[]
 }
 
 model Lesson {
-  id          String   @id @default(cuid())
-  title       String
-  description String?
-  videoUrl    String
-  duration    Int      // In seconds
-  order       Int
-
-  moduleId    String
-  module      Module   @relation(fields: [moduleId], references: [id])
-
-  progress    Progress[]
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-}
-
-model Progress {
-  id          String   @id @default(cuid())
-  completed   Boolean  @default(false)
-  percentage  Float    @default(0)
-  load        Float?   // Weight used
-  reps        Int?     // Reps performed
-
-  userId      String
-  user        User     @relation(fields: [userId], references: [id])
-
-  lessonId    String
-  lesson      Lesson   @relation(fields: [lessonId], references: [id])
-
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  @@unique([userId, lessonId])
-}
-
-model Post {
-  id        String    @id @default(cuid())
-  content   String
-  imageUrl  String?
-
-  userId    String
-  user      User      @relation(fields: [userId], references: [id])
-
-  comments  Comment[]
-  likes     Int       @default(0)
-
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-}
-
-model Comment {
-  id        String   @id @default(cuid())
-  content   String
-
-  postId    String
-  post      Post     @relation(fields: [postId], references: [id])
-
-  userId    String
-  user      User     @relation(fields: [userId], references: [id])
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-model Badge {
-  id          String   @id @default(cuid())
-  name        String
-  description String
-  icon        String
-  requirement String
-
-  users       UserBadge[]
-  createdAt   DateTime @default(now())
-}
-
-model UserBadge {
-  id        String   @id @default(cuid())
-  userId    String
-  user      User     @relation(fields: [userId], references: [id])
-
-  badgeId   String
-  badge     Badge    @relation(fields: [badgeId], references: [id])
-
-  createdAt DateTime @default(now())
-
-  @@unique([userId, badgeId])
-}
-
-model Achievement {
-  id          String   @id @default(cuid())
-  title       String
-  description String
-  points      Int
-
-  userId      String
-  user        User     @relation(fields: [userId], references: [id])
-
-  createdAt   DateTime @default(now())
-}
-
-model NutritionPlan {
-  id          String   @id @default(cuid())
-  content     Json     // Detailed meal plan
-
-  userId      String
-  user        User     @relation(fields: [userId], references: [id])
-
-  shoppingList ShoppingList?
-
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-}
-
-model ShoppingList {
   id              String   @id @default(cuid())
-  items           Json     // List of ingredients, quantities, costs
-  estimatedTotal  Float
+  title           String
+  description     String?
+  videoUrl        String
+  durationSec     Int
+  order           Int
+  moduleId        String
+  module          Module   @relation(fields: [moduleId], references: [id])
+  exercises       Exercise[]
+  progress        Progress[]
+}
 
-  nutritionPlanId String   @unique
-  nutritionPlan   NutritionPlan @relation(fields: [nutritionPlanId], references: [id])
+model Exercise {
+  id              String   @id @default(cuid())
+  name            String
+  muscles         Json?
+  equipment       String?
+  difficulty      String?
+  demoUrl         String?
+  instructions    String?
+  lessons         Lesson[]
+  logs            WorkoutLog[]
+}
 
+model WorkoutSession {
+  id              String   @id @default(cuid())
+  startTime       DateTime @default(now())
+  endTime         DateTime?
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  logs            WorkoutLog[]
+}
+
+model WorkoutLog {
+  id              String   @id @default(cuid())
+  sets            Int
+  reps            Int
+  load            Float
+  rpe             Int?
+  exerciseId      String
+  exercise        Exercise @relation(fields: [exerciseId], references: [id])
+  sessionId       String
+  session         WorkoutSession @relation(fields: [sessionId], references: [id])
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
   createdAt       DateTime @default(now())
 }
 
-model Subscription {
-  id           String   @id @default(cuid())
-  stripeId     String   @unique
-  status       String
-  planId       String
-  currentPeriodEnd DateTime
-
-  userId       String
-  user         User     @relation(fields: [userId], references: [id])
-
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+model Progress {
+  id              String   @id @default(cuid())
+  percentage      Float    @default(0)
+  completed       Boolean  @default(false)
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  lessonId        String
+  lesson          Lesson   @relation(fields: [lessonId], references: [id])
+  @@unique([userId, lessonId])
 }
 
-model MentorApplication {
-  id          String   @id @default(cuid())
-  status      String   @default("PENDING")
-  message     String?
+// --- BIOMETRICS ---
+model BodyMeasurement {
+  id              String   @id @default(cuid())
+  weight          Float?
+  neck            Float?
+  chest           Float?
+  waist           Float?
+  hips            Float?
+  thigh           Float?
+  bicep           Float?
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  createdAt       DateTime @default(now())
+}
 
-  userId      String
-  user        User     @relation(fields: [userId], references: [id])
-
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+model Photo {
+  id              String   @id @default(cuid())
+  url             String
+  type            String   // FRONT, SIDE, BACK
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  createdAt       DateTime @default(now())
 }
 
 model BodyAnalysis {
@@ -256,89 +215,241 @@ model BodyAnalysis {
   symmetryScore   Int?
   weakMuscles     Json?
   recommendations Json?
-  photoUrls       Json?
-
   userId          String
   user            User     @relation(fields: [userId], references: [id])
-
   createdAt       DateTime @default(now())
 }
 
+// --- NUTRITION ---
+model NutritionPlan {
+  id              String   @id @default(cuid())
+  dailyCalories   Int
+  proteinG        Float
+  carbsG          Float
+  fatsG           Float
+  meals           Meal[]
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  createdAt       DateTime @default(now())
+}
+
+model Meal {
+  id              String   @id @default(cuid())
+  name            String
+  time            String?
+  planId          String
+  plan            NutritionPlan @relation(fields: [planId], references: [id])
+  ingredients     Ingredient[]
+}
+
+model Ingredient {
+  id              String   @id @default(cuid())
+  name            String
+  amount          String
+  calories        Float?
+  mealId          String
+  meal            Meal     @relation(fields: [mealId], references: [id])
+}
+
+model FoodLog {
+  id              String   @id @default(cuid())
+  foodName        String
+  calories        Int
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  createdAt       DateTime @default(now())
+}
+
+// --- GAMIFICATION ---
 model Challenge {
-  id          String   @id @default(cuid())
-  name        String
-  duration    Int      // Days
-  rewardXP    Int
-
-  tenantId    String
-  tenant      Tenant   @relation(fields: [tenantId], references: [id])
-
-  programId   String?
-  program     Program? @relation(fields: [programId], references: [id])
-
-  participants ChallengeParticipant[]
-
-  createdAt   DateTime @default(now())
+  id              String   @id @default(cuid())
+  name            String
+  durationDays    Int
+  rewardXP        Int
+  programId       String?
+  program         Program? @relation(fields: [programId], references: [id])
+  tenantId        String
+  tenant          Tenant   @relation(fields: [tenantId], references: [id])
+  participants    ChallengeParticipant[]
+  createdAt       DateTime @default(now())
 }
 
 model ChallengeParticipant {
-  id          String    @id @default(cuid())
-  score       Int       @default(0)
-  rank        Int?
-
-  challengeId String
-  challenge   Challenge @relation(fields: [challengeId], references: [id])
-
-  userId      String
-  user        User      @relation(fields: [userId], references: [id])
-
-  createdAt   DateTime  @default(now())
-
+  id              String    @id @default(cuid())
+  score           Int       @default(0)
+  challengeId     String
+  challenge       Challenge @relation(fields: [challengeId], references: [id])
+  userId          String
+  user            User      @relation(fields: [userId], references: [id])
   @@unique([userId, challengeId])
+}
+
+model Badge {
+  id              String   @id @default(cuid())
+  name            String
+  icon            String
+  requirement     String
+  users           UserBadge[]
+}
+
+model UserBadge {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  badgeId         String
+  badge           Badge    @relation(fields: [badgeId], references: [id])
+  @@unique([userId, badgeId])
+}
+
+model Achievement {
+  id              String   @id @default(cuid())
+  title           String
+  description     String
+  users           UserAchievement[]
+}
+
+model UserAchievement {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  achId           String
+  achievement     Achievement @relation(fields: [achId], references: [id])
+  @@unique([userId, achId])
+}
+
+model XPLog {
+  id              String   @id @default(cuid())
+  amount          Int
+  reason          String
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  createdAt       DateTime @default(now())
+}
+
+// --- SOCIAL ---
+model Post {
+  id              String   @id @default(cuid())
+  content         String
+  mediaUrl        String?
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  comments        Comment[]
+  likes           Int      @default(0)
+  createdAt       DateTime @default(now())
+}
+
+model Comment {
+  id              String   @id @default(cuid())
+  content         String
+  postId          String
+  post            Post     @relation(fields: [postId], references: [id])
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  createdAt       DateTime @default(now())
+}
+
+model Message {
+  id              String   @id @default(cuid())
+  content         String
+  fromId          String
+  from            User     @relation("SentMessages", fields: [fromId], references: [id])
+  toId            String
+  to              User     @relation("ReceivedMessages", fields: [toId], references: [id])
+  createdAt       DateTime @default(now())
+}
+
+// --- MONETIZATION ---
+model Subscription {
+  id              String   @id @default(cuid())
+  stripeId        String   @unique
+  status          String
+  planId          String
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model Affiliate {
   id              String   @id @default(cuid())
-  referralCode    String   @unique
+  code            String   @unique
   commissionRate  Float    @default(0.3)
-  earnings        Float    @default(0)
-
+  earningsTotal   Float    @default(0)
   userId          String   @unique
   user            User     @relation(fields: [userId], references: [id])
-
   referrals       Referral[]
-
-  createdAt       DateTime @default(now())
 }
 
 model Referral {
   id              String   @id @default(cuid())
-  clickCount      Int      @default(0)
-  conversionCount Int      @default(0)
-  totalCommission Float    @default(0)
-
   affiliateId     String
   affiliate       Affiliate @relation(fields: [affiliateId], references: [id])
+  referredUserId  String    @unique
+  referredUser    User      @relation("ReferredUser", fields: [referredUserId], references: [id])
+  userId          String?
+  user            User?     @relation("ReferredBy", fields: [userId], references: [id])
+  status          String    @default("PENDING")
+  commissionPaid  Float     @default(0)
+  createdAt       DateTime  @default(now())
+}
 
-  referredUserId  String?  @unique
-  referredUser    User?    @relation(fields: [referredUserId], references: [id])
+// --- SYSTEM ---
+model Device {
+  id              String   @id @default(cuid())
+  token           String
+  platform        String
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+}
 
+model Notification {
+  id              String   @id @default(cuid())
+  title           String
+  body            String
+  type            String
+  read            Boolean  @default(false)
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
   createdAt       DateTime @default(now())
 }
 
-model AutomationTrigger {
-  id          String   @id @default(cuid())
-  type        String   // INACTIVITY, COMPLETION, MILESTONE
-  action      String   // NOTIFICATION, BADGE, RECOMMENDATION
-  config      Json
-  isActive    Boolean  @default(true)
-
-  createdAt   DateTime @default(now())
+model UserActivity {
+  id              String   @id @default(cuid())
+  type            String
+  meta            Json?
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  createdAt       DateTime @default(now())
 }
 
-model Metric {
-  id          String   @id @default(cuid())
-  name        String   // MRR, LTV, CAC, etc.
-  value       Float
-  date        DateTime @default(now())
+model AnalyticsEvent {
+  id              String   @id @default(cuid())
+  name            String
+  properties      Json?
+  tenantId        String?
+  tenant          Tenant?  @relation(fields: [tenantId], references: [id])
+  createdAt       DateTime @default(now())
+}
+
+model GrowthTrigger {
+  id              String   @id @default(cuid())
+  name            String
+  action          String
+  config          Json
+  isActive        Boolean  @default(true)
+}
+
+model FeatureFlag {
+  id              String   @id @default(cuid())
+  name            String   @unique
+  enabled         Boolean  @default(false)
+}
+
+model SystemLog {
+  id              String   @id @default(cuid())
+  level           String
+  message         String
+  service         String
+  meta            Json?
+  createdAt       DateTime @default(now())
 }
