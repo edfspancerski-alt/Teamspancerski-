@@ -1,6 +1,6 @@
 'use client';
 
-import { Card, CardHeader, CardTitle, CardContent } from '../../../../packages/ui';
+import { Card, CardHeader, CardTitle, CardContent } from '@repo/ui';
 import { motion } from 'framer-motion';
 
 export default function Dashboard() {

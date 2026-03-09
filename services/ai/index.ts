@@ -5,36 +5,44 @@ const openai = new OpenAI({
 });
 
 export interface UserProfile {
+  age: number;
   weight: number;
   height: number;
-  age: number;
   goal: string;
+  experience: 'iniciante' | 'intermediário' | 'avançado';
+  environment: 'casa' | 'academia';
+  availability: number;
   dietaryRestrictions?: string;
   budget?: number;
 }
 
-export const generateNutritionPlan = async (profile: UserProfile) => {
-  const prompt = `Generate a personalized nutrition plan for a user with the following profile:
-    Weight: ${profile.weight}kg, Height: ${profile.height}cm, Age: ${profile.age},
-    Goal: ${profile.goal}, Dietary Restrictions: ${profile.dietaryRestrictions || 'None'},
-    Monthly Budget: R$ ${profile.budget || 'Flexible'}.
+export const generateProfessionalProtocol = async (profile: UserProfile) => {
+  const prompt = `Você é um engenheiro de software e coach de elite. Sua missão é gerar um protocolo de treinamento e nutrição altamente personalizado seguindo a filosofia de Dorian Yates (intensidade), Pacholok (biomecânica) e ciência moderna.
 
-    Provide a daily meal plan (Breakfast, Lunch, Snack, Dinner) and an automated shopping list with estimated costs.
-    Respond in JSON format with "mealPlan" and "shoppingList" keys.`;
+  DADOS DO USUÁRIO:
+  Idade: ${profile.age}
+  Peso: ${profile.weight}kg
+  Altura: ${profile.height}cm
+  Objetivo: ${profile.goal}
+  Experiência: ${profile.experience}
+  Ambiente: ${profile.environment}
+  Disponibilidade: ${profile.availability} dias/semana
+  Restrições: ${profile.dietaryRestrictions || 'Nenhuma'}
+  Orçamento: R$ ${profile.budget || 'Flexível'}
 
-  const response = await openai.chat.completions.create({
-    model: 'gpt-4-turbo-preview',
-    messages: [{ role: 'user', content: prompt }],
-    response_format: { type: 'json_object' },
-  });
+  Gere um relatório estruturado em 10 seções:
+  1. Objetivo do Treino (claro e focado)
+  2. Divisão do Treino (cronograma semanal baseado na disponibilidade)
+  3. Plano de Treino Semanal (fases: adaptação, hipertrofia, força, deload)
+  4. Detalhes do Exercício (Séries, Repetições, Descanso, Ritmo, Carga)
+  5. Estratégia de Progressão (sobrecarga progressiva, progressão dupla)
+  6. Estratégia de Recuperação (sono, deload, recuperação ativa)
+  7. Plano Nutricional (Calorias, Proteínas, Carbos, Gorduras)
+  8. Plano Alimentar (Café, Almoço, Jantar, Lanches - simples e econômico)
+  9. Lista de Compras (Ingredientes, Quantidades, Custo Estimado)
+  10. Recomendações para Acompanhamento (Peso, Força, Fotos)
 
-  return JSON.parse(response.choices[0].message.content || '{}');
-};
-
-export const getRecommendations = async (userProgress: any, goals: string) => {
-  const prompt = `Based on the user progress ${JSON.stringify(userProgress)} and goals "${goals}",
-    recommend 3 programs or focus areas for the next month.
-    Respond in JSON format with "recommendations" as a list of objects (title, reason).`;
+  Responda estritamente em JSON com as chaves: "trainingProtocol", "nutritionPlan", "shoppingList", "fullReport" (objeto com as 10 seções detalhadas).`;
 
   const response = await openai.chat.completions.create({
     model: 'gpt-4-turbo-preview',

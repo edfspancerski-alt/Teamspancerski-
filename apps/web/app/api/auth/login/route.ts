@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import { prisma } from '../../../../../packages/database';
-import { comparePassword, signToken } from '../../../../../packages/auth';
+import { prisma } from '@repo/database';
+import { comparePassword, signToken } from '@repo/auth';
 
 export async function POST(request: Request) {
   try {

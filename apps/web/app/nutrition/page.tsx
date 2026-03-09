@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Card, CardHeader, CardTitle, CardContent, Button } from '../../../../packages/ui';
+import { Card, CardHeader, CardTitle, CardContent, Button } from '@repo/ui';
 
 export default function Nutrition() {
   const [loading, setLoading] = useState(false);
@@ -9,23 +9,23 @@ export default function Nutrition() {
 
   const generatePlan = async () => {
     setLoading(true);
-    // Mocking API call for demo
-    setTimeout(() => {
-      setPlan({
-        mealPlan: {
-          Breakfast: 'Omelete com espinafre e café sem açúcar',
-          Lunch: 'Frango grelhado com batata doce e brócolis',
-          Snack: 'Iogurte natural com chia',
-          Dinner: 'Salmão com aspargos'
+    try {
+      const response = await fetch('/api/nutrition/generate', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
         },
-        shoppingList: [
-          { item: 'Ovos', qty: '12 un', cost: 'R$ 15,00' },
-          { item: 'Peito de Frango', qty: '1kg', cost: 'R$ 25,00' },
-          { item: 'Batata Doce', qty: '500g', cost: 'R$ 5,00' }
-        ]
       });
+      const data = await response.json();
+      setPlan({
+        mealPlan: data.content,
+        shoppingList: data.shoppingList?.items || []
+      });
+    } catch (error) {
+      console.error('Failed to generate plan:', error);
+    } finally {
       setLoading(false);
-    }, 2000);
+    }
   };
 
   return (

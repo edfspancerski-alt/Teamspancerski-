@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import { prisma } from '../../../../../packages/database';
-import { verifyToken, hasRole } from '../../../../../packages/auth';
+import { prisma } from '@repo/database';
+import { verifyToken, hasRole } from '@repo/auth';
 
 export async function GET(request: Request) {
   const authHeader = request.headers.get('authorization');

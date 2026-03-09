@@ -1,6 +1,6 @@
 'use client';
 
-import { Card, CardHeader, CardTitle, CardContent, Button } from '../../../../packages/ui';
+import { Card, CardHeader, CardTitle, CardContent, Button } from '@repo/ui';
 
 export default function AdminDashboard() {
   const metrics = [

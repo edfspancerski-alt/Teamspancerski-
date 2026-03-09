@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Card, CardHeader, CardTitle, CardContent, Button } from '../../../../packages/ui';
+import { Card, CardHeader, CardTitle, CardContent, Button } from '@repo/ui';
 
 export default function Programs() {
   const programs = [
