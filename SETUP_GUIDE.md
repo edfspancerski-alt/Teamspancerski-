@@ -35,7 +35,14 @@ NEXT_PUBLIC_URL="https://seu-app.com"
 - **Frontend (Vercel)**: Conecte seu repositório GitHub, selecione o diretório `apps/web`.
 - **Backend (Render)**: Configure serviços para cada microserviço em `services/` se optar por infraestrutura distribuída, ou use o monorepo com builds específicos.
 
-## 6. Escalabilidade e Performance
+## 6. Desenvolvimento no Codespaces
+O projeto está configurado para **GitHub Codespaces**. Para iniciar o desenvolvimento em segundos:
+1. Abra o repositório no GitHub.
+2. Clique em **Code** -> **Codespaces** -> **Create codespace on main**.
+3. O ambiente será configurado automaticamente (dependências, Prisma).
+4. Configure as chaves no arquivo `.env` gerado.
+
+## 7. Escalabilidade e Performance
 - O sistema utiliza **Redis Cluster** para sessões e rankings.
 - **BullMQ** gerencia o processamento assíncrono de vídeos e geração de IA.
 - **Prisma** está configurado com pooling de conexões para suportar 1M+ de usuários.
