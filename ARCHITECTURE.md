@@ -1,50 +1,34 @@
-# Team Spancerski - Advanced Multi-Agent Distributed SaaS Architecture
+# Team Spancerski - Advanced AI Platform Architecture
 
-## 1. High-Level Design
-The platform follows a distributed microservices architecture designed for 1M+ users and high availability.
+## AI Coaching Ecosystem
+The platform features an autonomous AI coaching system driven by behavioral learning and scientific retrieval.
 
-### Distributed Patterns
-- **CQRS**: Separate read/write paths for optimal performance.
-- **Event Sourcing**: Critical business state transitions are captured as immutable events.
-- **Event-Driven Communication**: Services interact asynchronously via Redis Streams and BullMQ.
-- **Edge Computing**: Next.js middleware performs multi-tenant resolution and security checks at the edge.
+### Multi-Agent Orchestration
+We coordinate 50+ specialized agents:
+- **Personal Trainer**: 8-12 week adaptive programs.
+- **Nutritionist**: Macro optimization and grocery planning.
+- **Behavioral Analyst**: Adherence tracking and consistency coaching.
+- **Video Analysis Agent**: Joint angle and form detection from user videos.
+- **Recovery & Stress Coaches**: Sleep and workload optimization.
 
-## 2. Microservices (15 Services)
-- **auth-service**: JWT, OAuth, RBAC.
-- **user-service**: Profile, biometrics, and medical data.
-- **program-service**: Training programs and curriculum management.
-- **training-service**: Session tracking and adaptive training logic.
-- **nutrition-service**: Meal plans and macro calculations.
-- **ai-service**: Multi-agent orchestrator (Coach, Nutritionist, Analyst, etc.).
-- **video-service**: Distributed transcoding and adaptive streaming via Mux.
-- **community-service**: Social feed and real-time messaging.
-- **gamification-service**: XP, Levels, Streaks, and Badges.
-- **challenge-service**: Community missions and global leaderboards.
-- **affiliate-service**: Referral tracking and automatic commission logic.
-- **notification-service**: Large-scale push (FCM) and email delivery.
-- **analytics-service**: System-wide metrics (MRR, LTV, Retention).
-- **growth-engine**: Viral triggers and automated engagement workflows.
-- **tenant-service**: Multi-tenant isolation and white-label management.
+### AI Tech Stack
+- **RAG (Retrieval Augmented Generation)**: Combines OpenAI embeddings with a technical knowledge base (pgvector).
+- **User Memory Manager**: Persistent behavioral context window for long-term personalization.
+- **Computer Vision**: Exercise form correction and body analysis using GPT-4o and custom vision logic.
 
-## 3. Data Architecture
-- **Database (Prisma/PostgreSQL)**: Scalable relational schema with 60+ tables.
-- **Cache (Redis Cluster)**: Session storage, leaderboard caching, and AI response acceleration.
-- **Queues (BullMQ)**: Background processing for high-latency tasks.
+## Technical Architecture
+- **Distributed Services**: 15 specialized microservices.
+- **Event-Driven**: All actions (WorkoutCompleted, ProfileUpdated) trigger AI re-evaluation.
+- **Scalable Processing**: BullMQ/Redis for heavy AI generation and video transcoding.
+- **Frontend**: Next.js 14 with real-time conversational streaming.
 
-## 4. AI Multi-Agent Engine
-A specialized orchestrator coordinates 8 agents:
-- **Personal Trainer**: 8-12 week HIT/Biomechanics programming.
-- **Nutritionist**: Personalized macros and shopping lists.
-- **Progress Analyst**: Predictive training adaptation.
-- **Recovery Coach**: Sleep and stress optimization.
-- **Motivation Coach**: Psychological reinforcement.
-- **Content Creator**: Automated educational generation.
-- **Community Moderator**: Sentiment analysis and toxicity detection.
-- **Program Generator**: Dynamic workout assembly.
+## Knowledge Base
+The system retrieves data from indexed research papers on:
+- Hypertrophy & Biomechanics.
+- Sports Nutrition & Physiology.
+- Injury Prevention & Rehabilitation.
 
-## 5. White Label System
-Multi-tenant isolation allows partners to run branded instances with custom:
-- Domains
-- Logos & Colors
-- Content & Programs
-- User Databases
+## Scaling to Millions
+- **Vector Indexing**: pgvector on Neon for fast knowledge retrieval.
+- **Horizontal Scaling**: All microservices are stateless and container-ready.
+- **Edge Logic**: Multi-tenant resolution and security at the edge.

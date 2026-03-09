@@ -16,7 +16,7 @@ export async function POST(request: Request) {
     const payload = verifyToken(token);
     const { planId } = await request.json(); // 'trimestral' or 'anual'
 
-    const priceId = planId === 'anual' ? 'price_anual_id' : 'price_trimestral_id';
+    const priceId = planId === 'anual' ? process.env.STRIPE_PRICE_ANNUAL : process.env.STRIPE_PRICE_QUARTERLY;
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
