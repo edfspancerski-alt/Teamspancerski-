@@ -1,0 +1,258 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  COACH
+  MEMBER
+}
+
+model Tenant {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  logo        String?
+  primaryColor String?
+  domain      String?  @unique
+  users       User[]
+  programs    Program[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  password      String
+  name          String?
+  role          Role      @default(MEMBER)
+
+  // Profile
+  weight        Float?
+  height        Float?
+  age           Int?
+  goal          String?
+  dietaryRestrictions String?
+  budget        Float?
+
+  // Gamification
+  xp            Int       @default(0)
+  streak        Int       @default(0)
+  lastActive    DateTime?
+
+  tenantId      String
+  tenant        Tenant    @relation(fields: [tenantId], references: [id])
+
+  subscriptions Subscription[]
+  progress      Progress[]
+  posts         Post[]
+  comments      Comment[]
+  badges        UserBadge[]
+  nutritionPlans NutritionPlan[]
+  achievements  Achievement[]
+  mentorApps    MentorApplication[]
+
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model Program {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  thumbnail   String?
+  duration    Int      // Total days
+  difficulty  String
+
+  tenantId    String
+  tenant      Tenant   @relation(fields: [tenantId], references: [id])
+
+  modules     Module[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Module {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  order       Int
+
+  programId   String
+  program     Program  @relation(fields: [programId], references: [id])
+
+  lessons     Lesson[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Lesson {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  videoUrl    String
+  duration    Int      // In seconds
+  order       Int
+
+  moduleId    String
+  module      Module   @relation(fields: [moduleId], references: [id])
+
+  progress    Progress[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Progress {
+  id          String   @id @default(cuid())
+  completed   Boolean  @default(false)
+  percentage  Float    @default(0)
+
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+
+  lessonId    String
+  lesson      Lesson   @relation(fields: [lessonId], references: [id])
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([userId, lessonId])
+}
+
+model Post {
+  id        String    @id @default(cuid())
+  content   String
+  imageUrl  String?
+
+  userId    String
+  user      User      @relation(fields: [userId], references: [id])
+
+  comments  Comment[]
+  likes     Int       @default(0)
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  content   String
+
+  postId    String
+  post      Post     @relation(fields: [postId], references: [id])
+
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Badge {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  icon        String
+  requirement String
+
+  users       UserBadge[]
+  createdAt   DateTime @default(now())
+}
+
+model UserBadge {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+
+  badgeId   String
+  badge     Badge    @relation(fields: [badgeId], references: [id])
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, badgeId])
+}
+
+model Achievement {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  points      Int
+
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+
+  createdAt   DateTime @default(now())
+}
+
+model NutritionPlan {
+  id          String   @id @default(cuid())
+  content     Json     // Detailed meal plan
+
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+
+  shoppingList ShoppingList?
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model ShoppingList {
+  id              String   @id @default(cuid())
+  items           Json     // List of ingredients, quantities, costs
+  estimatedTotal  Float
+
+  nutritionPlanId String   @unique
+  nutritionPlan   NutritionPlan @relation(fields: [nutritionPlanId], references: [id])
+
+  createdAt       DateTime @default(now())
+}
+
+model Subscription {
+  id           String   @id @default(cuid())
+  stripeId     String   @unique
+  status       String
+  planId       String
+  currentPeriodEnd DateTime
+
+  userId       String
+  user         User     @relation(fields: [userId], references: [id])
+
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model MentorApplication {
+  id          String   @id @default(cuid())
+  status      String   @default("PENDING") // PENDING, APPROVED, REJECTED
+  message     String?
+
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model AutomationTrigger {
+  id          String   @id @default(cuid())
+  type        String   // INACTIVITY, COMPLETION, MILESTONE
+  action      String   // NOTIFICATION, BADGE, RECOMMENDATION
+  config      Json
+  isActive    Boolean  @default(true)
+
+  createdAt   DateTime @default(now())
+}
+
+model Metric {
+  id          String   @id @default(cuid())
+  name        String   // MRR, LTV, CAC, etc.
+  value       Float
+  date        DateTime @default(now())
+}
