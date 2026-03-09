@@ -1,45 +1,42 @@
-# Team Spancerski - Technical Documentation
+# Team Spancerski - Advanced AI Fitness SaaS Platform
 
-## 1. System Architecture
-The platform is built as a highly scalable SaaS using a **Monorepo** architecture managed by Turborepo.
+## Multi-Agent AI System
+The platform uses a sophisticated multi-agent architecture to provide an autonomous coaching experience:
+- **Coach Agent**: Generates periodized 8-12 week programs.
+- **Nutrition Agent**: Crafts meal plans and shopping lists.
+- **Progress Analyst**: Adjusts training variables based on performance.
+- **Recovery Coach**: Optimizes sleep and recovery protocols.
+- **Motivation Agent**: Daily psychological support and engagement.
+- **Body Analysis Agent**: Computer vision-based physique assessment (via GPT-4 Vision/CV).
 
-### Tech Stack
-- **Frontend**: Next.js 14 (App Router), TailwindCSS, Shadcn UI, Framer Motion.
-- **Backend**: Next.js API Routes (Serverless ready).
-- **Database**: PostgreSQL with Prisma ORM.
-- **Auth**: JWT with RBAC (Admin, Coach, Member) & OAuth (Google/Apple).
-- **AI**: OpenAI API for personalized nutrition and smart recommendations.
-- **Payments**: Stripe (Trimestral/Annual plans + Mentorship Upsell).
-- **Video**: Mux/Cloudflare Stream (Adaptive Streaming).
-- **Notifications**: Firebase Cloud Messaging (FCM).
+## Core Systems
+### 1. Training & Adaptation
+- **Methodology**: Dorian Yates (HIT) + Pacholok (Biomechanics) + Modern Science.
+- **Adaptive Engine**: Real-time adjustments to load and volume based on user failure/progress.
+- **Video Player**: Adaptive streaming with automated progress tracking.
 
-## 2. Monorepo Structure
-- `/apps/web`: Main application for members and admin dashboard.
-- `/packages/database`: Prisma schema, client, and shared database logic.
-- `/packages/auth`: JWT, Bcrypt, and RBAC utility functions.
-- `/packages/ui`: Shared React components (Shadcn + custom VideoPlayer & Chat).
-- `/packages/config`: Shared configurations (Tailwind, TypeScript, Redis).
-- `/services/*`: Microservices for AI, Gamification, Automation, and Notifications.
+### 2. Nutrition & IA
+- Personalization based on weight, goal, restrictions, and monthly budget.
+- Automated Shopping Lists with estimated costs.
 
-## 3. Key Features
-- **Nutrition AI**: Generates meal plans and shopping lists based on user biometric data and budget.
-- **Gamification**: XP points, daily streaks, and automatic badge awarding.
-- **White Label**: Multi-tenant support via middleware. Partners can use custom domains and branding.
-- **Automation**: Trigger-based engine for inactivity reminders and content recommendations.
-- **Performance**: CDN integration, optimized Prisma queries, and Redis caching support.
+### 3. Growth & Monetization
+- **Affiliate System**: 30% recurring commission for user referrals.
+- **Gamification**: Challenges (30-day, Fat Loss, Glute) with rankings and XP.
+- **White Label**: Multi-tenant support for trainers to launch their own branded apps.
+- **Subscription**: Stripe-integrated Trimestral and Annual plans.
 
-## 4. Scaling to 100k+ Users
-- **Horizontal Scaling**: Backend logic is stateless, allowing deployment across multiple instances/containers.
-- **Database Optimization**: Indexed queries and connection pooling (Prisma Accelerate / PgBouncer).
-- **Cache**: Redis for session data and frequent API responses.
-- **CDN**: Cloudflare for static assets and global video delivery.
+### 4. Community & Social
+- Feed, comments, likes, and real-time chat (WebSocket-ready).
+- Public profiles and challenge leaderboards.
 
-## 5. Deployment Guide
-1. **Repository**: Push code to GitHub.
-2. **Database**: Provision a PostgreSQL instance (Neon/Supabase).
-3. **Environment Variables**: Set `DATABASE_URL`, `JWT_SECRET`, `STRIPE_SECRET_KEY`, `OPENAI_API_KEY` in deployment platform.
-4. **Build & Deploy**:
-   - `npm install`
-   - `npx prisma generate`
-   - `npm run build`
-   - Deploy `/apps/web` to Vercel.
+## Scalability & Performance
+- **Infrastructure**: Next.js 14 App Router, Vercel, Neon PostgreSQL.
+- **Cache**: Redis support for session management and API response caching.
+- **Scalability**: Horizontal scaling ready, CDN for global delivery.
+
+## Deployment Instructions
+1. `npm install`
+2. `npx prisma generate`
+3. Configure `.env` (Stripe, OpenAI, Database).
+4. `npm run build`
+5. Deploy `apps/web` to Vercel.

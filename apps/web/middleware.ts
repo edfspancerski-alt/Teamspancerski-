@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/request';
-import { prisma } from '../../packages/database';
+import { prisma } from '@repo/database';
 
 export async function middleware(request: NextRequest) {
   const url = request.nextUrl;
