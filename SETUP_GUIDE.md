@@ -42,7 +42,30 @@ O projeto está configurado para **GitHub Codespaces**. Para iniciar o desenvolv
 3. O ambiente será configurado automaticamente (dependências, Prisma).
 4. Configure as chaves no arquivo `.env` gerado.
 
-## 7. Escalabilidade e Performance
+## 7. Comandos Rápidos (Terminal)
+Se você precisar executar manualmente no terminal do Codespaces ou localmente:
+
+```bash
+# 1. Instalar todas as dependências do monorepo
+npm install
+
+# 2. Configurar variáveis de ambiente
+cp .env.example .env
+
+# 3. Gerar o cliente do Banco de Dados (Prisma)
+npx prisma generate --schema=packages/database/prisma/schema.prisma
+
+# 4. Sincronizar o banco de dados (Neon/PostgreSQL)
+npx prisma db push --schema=packages/database/prisma/schema.prisma
+
+# 5. Popular o banco com os +140 exercícios e vídeos
+npx prisma db seed --schema=packages/database/prisma/schema.prisma
+
+# 6. Iniciar o ambiente de desenvolvimento
+npm run dev
+```
+
+## 8. Escalabilidade e Performance
 - O sistema utiliza **Redis Cluster** para sessões e rankings.
 - **BullMQ** gerencia o processamento assíncrono de vídeos e geração de IA.
 - **Prisma** está configurado com pooling de conexões para suportar 1M+ de usuários.

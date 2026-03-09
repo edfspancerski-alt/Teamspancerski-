@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@repo/database';
 import { verifyToken } from '@repo/auth';
-import { generateNutritionPlan } from '@repo/ai';
+import { nutritionAgent as generateNutritionPlan } from '@repo/ai';
 
 export async function POST(request: Request) {
   const authHeader = request.headers.get('authorization');

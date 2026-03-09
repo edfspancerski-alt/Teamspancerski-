@@ -1,10 +1,12 @@
-generator client {
-  provider = "prisma-client-js"
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [pgvector(map: "vector")]
 }
 
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
 }
 
 // --- CORE & MULTI-TENANCY ---
@@ -141,6 +143,17 @@ model Lesson {
   moduleId    String
   module      Module   @relation(fields: [moduleId], references: [id])
   progress    Progress[]
+}
+
+model Exercise {
+  id           String   @id @default(cuid())
+  name         String
+  muscles      Json     // Array of strings
+  equipment    String
+  difficulty   String
+  demoUrl      String
+  instructions String
+  createdAt    DateTime @default(now())
 }
 
 model WorkoutSession {

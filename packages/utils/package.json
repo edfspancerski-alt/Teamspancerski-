@@ -9,5 +9,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "dependencies": {
+    "bullmq": "^5.8.2",
+    "ioredis": "^5.4.1"
+  }
 }
