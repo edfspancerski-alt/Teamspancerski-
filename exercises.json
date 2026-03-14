@@ -1,0 +1,1442 @@
+[
+  {
+    "name": "Supino Reto com Barra",
+    "muscles": [
+      "peito"
+    ],
+    "equipment": "barra",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Supino Reto com Barra focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/supino-reto-com-barra.mp4"
+  },
+  {
+    "name": "Supino Inclinado com Halteres",
+    "muscles": [
+      "peito"
+    ],
+    "equipment": "halteres",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Supino Inclinado com Halteres focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/supino-inclinado-com-halteres.mp4"
+  },
+  {
+    "name": "Supino Declinado",
+    "muscles": [
+      "peito"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Supino Declinado focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/supino-declinado.mp4"
+  },
+  {
+    "name": "Flexão de Braços",
+    "muscles": [
+      "peito"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "iniciante",
+    "instructions": "Execute o movimento de Flexão de Braços focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/flexão-de-braços.mp4"
+  },
+  {
+    "name": "Crucifixo Reto",
+    "muscles": [
+      "peito"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Crucifixo Reto focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/crucifixo-reto.mp4"
+  },
+  {
+    "name": "Crucifixo Inclinado",
+    "muscles": [
+      "peito"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Crucifixo Inclinado focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/crucifixo-inclinado.mp4"
+  },
+  {
+    "name": "Crossover Cabo Alto",
+    "muscles": [
+      "peito"
+    ],
+    "equipment": "cabos",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Crossover Cabo Alto focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/crossover-cabo-alto.mp4"
+  },
+  {
+    "name": "Crossover Cabo Baixo",
+    "muscles": [
+      "peito"
+    ],
+    "equipment": "cabos",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Crossover Cabo Baixo focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/crossover-cabo-baixo.mp4"
+  },
+  {
+    "name": "Peck Deck",
+    "muscles": [
+      "peito"
+    ],
+    "equipment": "máquina",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Peck Deck focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/peck-deck.mp4"
+  },
+  {
+    "name": "Flexão Diamante",
+    "muscles": [
+      "peito"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "iniciante",
+    "instructions": "Execute o movimento de Flexão Diamante focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/flexão-diamante.mp4"
+  },
+  {
+    "name": "Supino na Máquina",
+    "muscles": [
+      "peito"
+    ],
+    "equipment": "máquina",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Supino na Máquina focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/supino-na-máquina.mp4"
+  },
+  {
+    "name": "Dips (Paralelas)",
+    "muscles": [
+      "peito"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Dips (Paralelas) focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/dips-(paralelas).mp4"
+  },
+  {
+    "name": "Pullover com Haltere",
+    "muscles": [
+      "peito"
+    ],
+    "equipment": "halteres",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Pullover com Haltere focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/pullover-com-haltere.mp4"
+  },
+  {
+    "name": "Crucifixo no Cabo",
+    "muscles": [
+      "peito"
+    ],
+    "equipment": "cabos",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Crucifixo no Cabo focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/crucifixo-no-cabo.mp4"
+  },
+  {
+    "name": "Supino com Pegada Fechada",
+    "muscles": [
+      "peito"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Supino com Pegada Fechada focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/supino-com-pegada-fechada.mp4"
+  },
+  {
+    "name": "Flexão com Joelhos",
+    "muscles": [
+      "peito"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "iniciante",
+    "instructions": "Execute o movimento de Flexão com Joelhos focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/flexão-com-joelhos.mp4"
+  },
+  {
+    "name": "Supino Articulado",
+    "muscles": [
+      "peito"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Supino Articulado focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/supino-articulado.mp4"
+  },
+  {
+    "name": "Flexão Explosiva",
+    "muscles": [
+      "peito"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "iniciante",
+    "instructions": "Execute o movimento de Flexão Explosiva focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/flexão-explosiva.mp4"
+  },
+  {
+    "name": "Abertura de Peito com Elástico",
+    "muscles": [
+      "peito"
+    ],
+    "equipment": "elástico",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Abertura de Peito com Elástico focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/abertura-de-peito-com-elástico.mp4"
+  },
+  {
+    "name": "Crucifixo Inclinado no Cabo",
+    "muscles": [
+      "peito"
+    ],
+    "equipment": "cabos",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Crucifixo Inclinado no Cabo focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/crucifixo-inclinado-no-cabo.mp4"
+  },
+  {
+    "name": "Puxada Frontal",
+    "muscles": [
+      "costas"
+    ],
+    "equipment": "máquina",
+    "difficulty": "iniciante",
+    "instructions": "Execute o movimento de Puxada Frontal focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/puxada-frontal.mp4"
+  },
+  {
+    "name": "Remada Curvada com Barra",
+    "muscles": [
+      "costas"
+    ],
+    "equipment": "barra",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Remada Curvada com Barra focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/remada-curvada-com-barra.mp4"
+  },
+  {
+    "name": "Barra Fixa",
+    "muscles": [
+      "costas"
+    ],
+    "equipment": "barra",
+    "difficulty": "avançado",
+    "instructions": "Execute o movimento de Barra Fixa focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/barra-fixa.mp4"
+  },
+  {
+    "name": "Remada Baixa com Triângulo",
+    "muscles": [
+      "costas"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Remada Baixa com Triângulo focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/remada-baixa-com-triângulo.mp4"
+  },
+  {
+    "name": "Levantamento Terra",
+    "muscles": [
+      "costas"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "avançado",
+    "instructions": "Execute o movimento de Levantamento Terra focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/levantamento-terra.mp4"
+  },
+  {
+    "name": "Puxada com Pegada Inversa",
+    "muscles": [
+      "costas"
+    ],
+    "equipment": "máquina",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Puxada com Pegada Inversa focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/puxada-com-pegada-inversa.mp4"
+  },
+  {
+    "name": "Remada Unilateral com Haltere",
+    "muscles": [
+      "costas"
+    ],
+    "equipment": "halteres",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Remada Unilateral com Haltere focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/remada-unilateral-com-haltere.mp4"
+  },
+  {
+    "name": "Lombar (Superman)",
+    "muscles": [
+      "costas"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Lombar (Superman) focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/lombar-(superman).mp4"
+  },
+  {
+    "name": "Puxada com Braços Estendidos",
+    "muscles": [
+      "costas"
+    ],
+    "equipment": "máquina",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Puxada com Braços Estendidos focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/puxada-com-braços-estendidos.mp4"
+  },
+  {
+    "name": "Remada Cavalinho",
+    "muscles": [
+      "costas"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Remada Cavalinho focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/remada-cavalinho.mp4"
+  },
+  {
+    "name": "Barra Fixa Supinada",
+    "muscles": [
+      "costas"
+    ],
+    "equipment": "barra",
+    "difficulty": "avançado",
+    "instructions": "Execute o movimento de Barra Fixa Supinada focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/barra-fixa-supinada.mp4"
+  },
+  {
+    "name": "Remada na Máquina",
+    "muscles": [
+      "costas"
+    ],
+    "equipment": "máquina",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Remada na Máquina focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/remada-na-máquina.mp4"
+  },
+  {
+    "name": "Puxada na Nuca",
+    "muscles": [
+      "costas"
+    ],
+    "equipment": "máquina",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Puxada na Nuca focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/puxada-na-nuca.mp4"
+  },
+  {
+    "name": "Good Morning",
+    "muscles": [
+      "costas"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Good Morning focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/good-morning.mp4"
+  },
+  {
+    "name": "Remada Curvada com Halteres",
+    "muscles": [
+      "costas"
+    ],
+    "equipment": "halteres",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Remada Curvada com Halteres focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/remada-curvada-com-halteres.mp4"
+  },
+  {
+    "name": "Remada Alta com Barra",
+    "muscles": [
+      "costas"
+    ],
+    "equipment": "barra",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Remada Alta com Barra focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/remada-alta-com-barra.mp4"
+  },
+  {
+    "name": "Encolhimento de Ombros",
+    "muscles": [
+      "costas"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Encolhimento de Ombros focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/encolhimento-de-ombros.mp4"
+  },
+  {
+    "name": "Face Pull",
+    "muscles": [
+      "costas"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Face Pull focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/face-pull.mp4"
+  },
+  {
+    "name": "Puxada Triângulo",
+    "muscles": [
+      "costas"
+    ],
+    "equipment": "máquina",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Puxada Triângulo focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/puxada-triângulo.mp4"
+  },
+  {
+    "name": "Remada Articulada",
+    "muscles": [
+      "costas"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Remada Articulada focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/remada-articulada.mp4"
+  },
+  {
+    "name": "Agachamento Livre",
+    "muscles": [
+      "quadríceps"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Agachamento Livre focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/agachamento-livre.mp4"
+  },
+  {
+    "name": "Leg Press 45",
+    "muscles": [
+      "quadríceps"
+    ],
+    "equipment": "máquina",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Leg Press 45 focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/leg-press-45.mp4"
+  },
+  {
+    "name": "Cadeira Extensora",
+    "muscles": [
+      "quadríceps"
+    ],
+    "equipment": "máquina",
+    "difficulty": "iniciante",
+    "instructions": "Execute o movimento de Cadeira Extensora focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/cadeira-extensora.mp4"
+  },
+  {
+    "name": "Afundo com Halteres",
+    "muscles": [
+      "quadríceps"
+    ],
+    "equipment": "halteres",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Afundo com Halteres focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/afundo-com-halteres.mp4"
+  },
+  {
+    "name": "Agachamento Hack",
+    "muscles": [
+      "quadríceps"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Agachamento Hack focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/agachamento-hack.mp4"
+  },
+  {
+    "name": "Agachamento Sumô",
+    "muscles": [
+      "quadríceps"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Agachamento Sumô focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/agachamento-sumô.mp4"
+  },
+  {
+    "name": "Sissy Squat",
+    "muscles": [
+      "quadríceps"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Sissy Squat focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/sissy-squat.mp4"
+  },
+  {
+    "name": "Agachamento Frontal",
+    "muscles": [
+      "quadríceps"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Agachamento Frontal focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/agachamento-frontal.mp4"
+  },
+  {
+    "name": "Passada (Lunge)",
+    "muscles": [
+      "quadríceps"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Passada (Lunge) focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/passada-(lunge).mp4"
+  },
+  {
+    "name": "Agachamento Búlgaro",
+    "muscles": [
+      "quadríceps"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Agachamento Búlgaro focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/agachamento-búlgaro.mp4"
+  },
+  {
+    "name": "Leg Press Horizontal",
+    "muscles": [
+      "quadríceps"
+    ],
+    "equipment": "máquina",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Leg Press Horizontal focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/leg-press-horizontal.mp4"
+  },
+  {
+    "name": "Agachamento com Salto",
+    "muscles": [
+      "quadríceps"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Agachamento com Salto focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/agachamento-com-salto.mp4"
+  },
+  {
+    "name": "Subida no Banco (Step-up)",
+    "muscles": [
+      "quadríceps"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Subida no Banco (Step-up) focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/subida-no-banco-(step-up).mp4"
+  },
+  {
+    "name": "Agachamento Goblet",
+    "muscles": [
+      "quadríceps"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Agachamento Goblet focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/agachamento-goblet.mp4"
+  },
+  {
+    "name": "Agachamento na Parede (Wall Sit)",
+    "muscles": [
+      "quadríceps"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Agachamento na Parede (Wall Sit) focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/agachamento-na-parede-(wall-sit).mp4"
+  },
+  {
+    "name": "Agachamento com Elástico",
+    "muscles": [
+      "quadríceps"
+    ],
+    "equipment": "elástico",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Agachamento com Elástico focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/agachamento-com-elástico.mp4"
+  },
+  {
+    "name": "Pistol Squat",
+    "muscles": [
+      "quadríceps"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "avançado",
+    "instructions": "Execute o movimento de Pistol Squat focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/pistol-squat.mp4"
+  },
+  {
+    "name": "Agachamento com Barra T",
+    "muscles": [
+      "quadríceps"
+    ],
+    "equipment": "barra",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Agachamento com Barra T focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/agachamento-com-barra-t.mp4"
+  },
+  {
+    "name": "Mesa Flexora",
+    "muscles": [
+      "posterior gluteos"
+    ],
+    "equipment": "máquina",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Mesa Flexora focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/mesa-flexora.mp4"
+  },
+  {
+    "name": "Stiff com Barra",
+    "muscles": [
+      "posterior gluteos"
+    ],
+    "equipment": "barra",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Stiff com Barra focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/stiff-com-barra.mp4"
+  },
+  {
+    "name": "Elevação Pélvica",
+    "muscles": [
+      "posterior gluteos"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Elevação Pélvica focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/elevação-pélvica.mp4"
+  },
+  {
+    "name": "Cadeira Abdutora",
+    "muscles": [
+      "posterior gluteos"
+    ],
+    "equipment": "máquina",
+    "difficulty": "iniciante",
+    "instructions": "Execute o movimento de Cadeira Abdutora focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/cadeira-abdutora.mp4"
+  },
+  {
+    "name": "Cadeira Adutora",
+    "muscles": [
+      "posterior gluteos"
+    ],
+    "equipment": "máquina",
+    "difficulty": "iniciante",
+    "instructions": "Execute o movimento de Cadeira Adutora focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/cadeira-adutora.mp4"
+  },
+  {
+    "name": "Cadeira Flexora",
+    "muscles": [
+      "posterior gluteos"
+    ],
+    "equipment": "máquina",
+    "difficulty": "iniciante",
+    "instructions": "Execute o movimento de Cadeira Flexora focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/cadeira-flexora.mp4"
+  },
+  {
+    "name": "Glúteo no Cabo",
+    "muscles": [
+      "posterior gluteos"
+    ],
+    "equipment": "cabos",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Glúteo no Cabo focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/glúteo-no-cabo.mp4"
+  },
+  {
+    "name": "Flexão de Pernas Sentado",
+    "muscles": [
+      "posterior gluteos"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "iniciante",
+    "instructions": "Execute o movimento de Flexão de Pernas Sentado focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/flexão-de-pernas-sentado.mp4"
+  },
+  {
+    "name": "Bom Dia (Good Morning)",
+    "muscles": [
+      "posterior gluteos"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Bom Dia (Good Morning) focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/bom-dia-(good-morning).mp4"
+  },
+  {
+    "name": "Levantamento Terra Romeno",
+    "muscles": [
+      "posterior gluteos"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "avançado",
+    "instructions": "Execute o movimento de Levantamento Terra Romeno focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/levantamento-terra-romeno.mp4"
+  },
+  {
+    "name": "Glúteo Máquina",
+    "muscles": [
+      "posterior gluteos"
+    ],
+    "equipment": "máquina",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Glúteo Máquina focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/glúteo-máquina.mp4"
+  },
+  {
+    "name": "Abdução de Quadril Deitado",
+    "muscles": [
+      "posterior gluteos"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Abdução de Quadril Deitado focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/abdução-de-quadril-deitado.mp4"
+  },
+  {
+    "name": "Ponte de Glúteo",
+    "muscles": [
+      "posterior gluteos"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Ponte de Glúteo focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/ponte-de-glúteo.mp4"
+  },
+  {
+    "name": "Kettlebell Swing",
+    "muscles": [
+      "posterior gluteos"
+    ],
+    "equipment": "kettlebell",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Kettlebell Swing focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/kettlebell-swing.mp4"
+  },
+  {
+    "name": "Extensão de Quadril",
+    "muscles": [
+      "posterior gluteos"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Extensão de Quadril focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/extensão-de-quadril.mp4"
+  },
+  {
+    "name": "Stiff com Halteres",
+    "muscles": [
+      "posterior gluteos"
+    ],
+    "equipment": "halteres",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Stiff com Halteres focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/stiff-com-halteres.mp4"
+  },
+  {
+    "name": "Flexão de Pernas Unilateral",
+    "muscles": [
+      "posterior gluteos"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "iniciante",
+    "instructions": "Execute o movimento de Flexão de Pernas Unilateral focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/flexão-de-pernas-unilateral.mp4"
+  },
+  {
+    "name": "Mesa Flexora Horizontal",
+    "muscles": [
+      "posterior gluteos"
+    ],
+    "equipment": "máquina",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Mesa Flexora Horizontal focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/mesa-flexora-horizontal.mp4"
+  },
+  {
+    "name": "Desenvolvimento com Halteres",
+    "muscles": [
+      "ombros"
+    ],
+    "equipment": "halteres",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Desenvolvimento com Halteres focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/desenvolvimento-com-halteres.mp4"
+  },
+  {
+    "name": "Elevação Lateral",
+    "muscles": [
+      "ombros"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Elevação Lateral focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/elevação-lateral.mp4"
+  },
+  {
+    "name": "Elevação Frontal",
+    "muscles": [
+      "ombros"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Elevação Frontal focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/elevação-frontal.mp4"
+  },
+  {
+    "name": "Crucifixo Inverso",
+    "muscles": [
+      "ombros"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Crucifixo Inverso focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/crucifixo-inverso.mp4"
+  },
+  {
+    "name": "Desenvolvimento Militar",
+    "muscles": [
+      "ombros"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Desenvolvimento Militar focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/desenvolvimento-militar.mp4"
+  },
+  {
+    "name": "Desenvolvimento Arnold",
+    "muscles": [
+      "ombros"
+    ],
+    "equipment": "halteres",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Desenvolvimento Arnold focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/desenvolvimento-arnold.mp4"
+  },
+  {
+    "name": "Elevação Lateral no Cabo",
+    "muscles": [
+      "ombros"
+    ],
+    "equipment": "cabos",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Elevação Lateral no Cabo focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/elevação-lateral-no-cabo.mp4"
+  },
+  {
+    "name": "Remada Alta",
+    "muscles": [
+      "ombros"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Remada Alta focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/remada-alta.mp4"
+  },
+  {
+    "name": "Desenvolvimento na Máquina",
+    "muscles": [
+      "ombros"
+    ],
+    "equipment": "máquina",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Desenvolvimento na Máquina focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/desenvolvimento-na-máquina.mp4"
+  },
+  {
+    "name": "Elevação Lateral Inclinado",
+    "muscles": [
+      "ombros"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Elevação Lateral Inclinado focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/elevação-lateral-inclinado.mp4"
+  },
+  {
+    "name": "Desenvolvimento com Barra por Trás",
+    "muscles": [
+      "ombros"
+    ],
+    "equipment": "barra",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Desenvolvimento com Barra por Trás focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/desenvolvimento-com-barra-por-trás.mp4"
+  },
+  {
+    "name": "Elevação Frontal com Anilhas",
+    "muscles": [
+      "ombros"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Elevação Frontal com Anilhas focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/elevação-frontal-com-anilhas.mp4"
+  },
+  {
+    "name": "Face Pull no Cabo",
+    "muscles": [
+      "ombros"
+    ],
+    "equipment": "cabos",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Face Pull no Cabo focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/face-pull-no-cabo.mp4"
+  },
+  {
+    "name": "Elevação Lateral Unilateral",
+    "muscles": [
+      "ombros"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Elevação Lateral Unilateral focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/elevação-lateral-unilateral.mp4"
+  },
+  {
+    "name": "Desenvolvimento Clean and Press",
+    "muscles": [
+      "ombros"
+    ],
+    "equipment": "máquina",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Desenvolvimento Clean and Press focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/desenvolvimento-clean-and-press.mp4"
+  },
+  {
+    "name": "Y-Raise",
+    "muscles": [
+      "ombros"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Y-Raise focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/y-raise.mp4"
+  },
+  {
+    "name": "Rosca Direta com Barra",
+    "muscles": [
+      "braços"
+    ],
+    "equipment": "barra",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Rosca Direta com Barra focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/rosca-direta-com-barra.mp4"
+  },
+  {
+    "name": "Rosca Martelo",
+    "muscles": [
+      "braços"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Rosca Martelo focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/rosca-martelo.mp4"
+  },
+  {
+    "name": "Tríceps Pulley",
+    "muscles": [
+      "braços"
+    ],
+    "equipment": "máquina",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Tríceps Pulley focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/tríceps-pulley.mp4"
+  },
+  {
+    "name": "Tríceps Testa",
+    "muscles": [
+      "braços"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Tríceps Testa focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/tríceps-testa.mp4"
+  },
+  {
+    "name": "Rosca Concentrada",
+    "muscles": [
+      "braços"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Rosca Concentrada focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/rosca-concentrada.mp4"
+  },
+  {
+    "name": "Rosca Scott",
+    "muscles": [
+      "braços"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Rosca Scott focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/rosca-scott.mp4"
+  },
+  {
+    "name": "Tríceps Corda",
+    "muscles": [
+      "braços"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Tríceps Corda focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/tríceps-corda.mp4"
+  },
+  {
+    "name": "Tríceps Coice",
+    "muscles": [
+      "braços"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Tríceps Coice focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/tríceps-coice.mp4"
+  },
+  {
+    "name": "Rosca Inversa",
+    "muscles": [
+      "braços"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Rosca Inversa focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/rosca-inversa.mp4"
+  },
+  {
+    "name": "Rosca 21",
+    "muscles": [
+      "braços"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Rosca 21 focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/rosca-21.mp4"
+  },
+  {
+    "name": "Tríceps Francês",
+    "muscles": [
+      "braços"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Tríceps Francês focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/tríceps-francês.mp4"
+  },
+  {
+    "name": "Mergulho no Banco",
+    "muscles": [
+      "braços"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Mergulho no Banco focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/mergulho-no-banco.mp4"
+  },
+  {
+    "name": "Rosca com Halteres Inclinado",
+    "muscles": [
+      "braços"
+    ],
+    "equipment": "halteres",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Rosca com Halteres Inclinado focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/rosca-com-halteres-inclinado.mp4"
+  },
+  {
+    "name": "Tríceps Supino",
+    "muscles": [
+      "braços"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Tríceps Supino focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/tríceps-supino.mp4"
+  },
+  {
+    "name": "Rosca Alternada",
+    "muscles": [
+      "braços"
+    ],
+    "equipment": "halteres",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Rosca Alternada focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/rosca-alternada.mp4"
+  },
+  {
+    "name": "Tríceps Extensão Unilateral",
+    "muscles": [
+      "braços"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Tríceps Extensão Unilateral focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/tríceps-extensão-unilateral.mp4"
+  },
+  {
+    "name": "Rosca Unilateral no Cabo",
+    "muscles": [
+      "braços"
+    ],
+    "equipment": "cabos",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Rosca Unilateral no Cabo focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/rosca-unilateral-no-cabo.mp4"
+  },
+  {
+    "name": "Tríceps Coice no Cabo",
+    "muscles": [
+      "braços"
+    ],
+    "equipment": "cabos",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Tríceps Coice no Cabo focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/tríceps-coice-no-cabo.mp4"
+  },
+  {
+    "name": "Prancha Isométrica",
+    "muscles": [
+      "core"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "iniciante",
+    "instructions": "Execute o movimento de Prancha Isométrica focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/prancha-isométrica.mp4"
+  },
+  {
+    "name": "Crunch Abdominal",
+    "muscles": [
+      "core"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "iniciante",
+    "instructions": "Execute o movimento de Crunch Abdominal focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/crunch-abdominal.mp4"
+  },
+  {
+    "name": "Elevação de Pernas",
+    "muscles": [
+      "core"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Elevação de Pernas focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/elevação-de-pernas.mp4"
+  },
+  {
+    "name": "Abdominal Bicicleta",
+    "muscles": [
+      "core"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Abdominal Bicicleta focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/abdominal-bicicleta.mp4"
+  },
+  {
+    "name": "Prancha Lateral",
+    "muscles": [
+      "core"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "iniciante",
+    "instructions": "Execute o movimento de Prancha Lateral focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/prancha-lateral.mp4"
+  },
+  {
+    "name": "Abdominal Canivete",
+    "muscles": [
+      "core"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Abdominal Canivete focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/abdominal-canivete.mp4"
+  },
+  {
+    "name": "Roda Abdominal",
+    "muscles": [
+      "core"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Roda Abdominal focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/roda-abdominal.mp4"
+  },
+  {
+    "name": "Russian Twist",
+    "muscles": [
+      "core"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Russian Twist focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/russian-twist.mp4"
+  },
+  {
+    "name": "Abdominal Infra no Banco",
+    "muscles": [
+      "core"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Abdominal Infra no Banco focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/abdominal-infra-no-banco.mp4"
+  },
+  {
+    "name": "Mountain Climber",
+    "muscles": [
+      "core"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Mountain Climber focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/mountain-climber.mp4"
+  },
+  {
+    "name": "Hollow Hold",
+    "muscles": [
+      "core"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Hollow Hold focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/hollow-hold.mp4"
+  },
+  {
+    "name": "V-Ups",
+    "muscles": [
+      "core"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de V-Ups focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/v-ups.mp4"
+  },
+  {
+    "name": "Prancha com Toque no Ombro",
+    "muscles": [
+      "core"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "iniciante",
+    "instructions": "Execute o movimento de Prancha com Toque no Ombro focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/prancha-com-toque-no-ombro.mp4"
+  },
+  {
+    "name": "Abdominal Obliquo",
+    "muscles": [
+      "core"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Abdominal Obliquo focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/abdominal-obliquo.mp4"
+  },
+  {
+    "name": "Dead Bug",
+    "muscles": [
+      "core"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Dead Bug focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/dead-bug.mp4"
+  },
+  {
+    "name": "Bird Dog",
+    "muscles": [
+      "core"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Bird Dog focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/bird-dog.mp4"
+  },
+  {
+    "name": "Abdominal na Polia",
+    "muscles": [
+      "core"
+    ],
+    "equipment": "cabos",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Abdominal na Polia focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/abdominal-na-polia.mp4"
+  },
+  {
+    "name": "Elevação de Quadril",
+    "muscles": [
+      "core"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Elevação de Quadril focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/elevação-de-quadril.mp4"
+  },
+  {
+    "name": "Polichinelo",
+    "muscles": [
+      "cardio"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Polichinelo focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/polichinelo.mp4"
+  },
+  {
+    "name": "Burpee",
+    "muscles": [
+      "cardio"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "avançado",
+    "instructions": "Execute o movimento de Burpee focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/burpee.mp4"
+  },
+  {
+    "name": "Corrida Estacionária",
+    "muscles": [
+      "cardio"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Corrida Estacionária focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/corrida-estacionária.mp4"
+  },
+  {
+    "name": "Salto em Altura",
+    "muscles": [
+      "cardio"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Salto em Altura focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/salto-em-altura.mp4"
+  },
+  {
+    "name": "Corda Naval",
+    "muscles": [
+      "cardio"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Corda Naval focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/corda-naval.mp4"
+  },
+  {
+    "name": "Pular Corda",
+    "muscles": [
+      "cardio"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Pular Corda focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/pular-corda.mp4"
+  },
+  {
+    "name": "Escalada (Mountain Climbers)",
+    "muscles": [
+      "cardio"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Escalada (Mountain Climbers) focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/escalada-(mountain-climbers).mp4"
+  },
+  {
+    "name": "Shadow Boxing",
+    "muscles": [
+      "cardio"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Shadow Boxing focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/shadow-boxing.mp4"
+  },
+  {
+    "name": "Sprint no Lugar",
+    "muscles": [
+      "cardio"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Sprint no Lugar focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/sprint-no-lugar.mp4"
+  },
+  {
+    "name": "Jumping Jacks",
+    "muscles": [
+      "cardio"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Jumping Jacks focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/jumping-jacks.mp4"
+  },
+  {
+    "name": "Skater Jumps",
+    "muscles": [
+      "cardio"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Skater Jumps focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/skater-jumps.mp4"
+  },
+  {
+    "name": "Box Jumps",
+    "muscles": [
+      "cardio"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Box Jumps focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/box-jumps.mp4"
+  },
+  {
+    "name": "High Knees",
+    "muscles": [
+      "cardio"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de High Knees focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/high-knees.mp4"
+  },
+  {
+    "name": "Butt Kicks",
+    "muscles": [
+      "cardio"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Butt Kicks focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/butt-kicks.mp4"
+  },
+  {
+    "name": "Lateral Shuffles",
+    "muscles": [
+      "cardio"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Lateral Shuffles focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/lateral-shuffles.mp4"
+  },
+  {
+    "name": "Bear Crawl",
+    "muscles": [
+      "cardio"
+    ],
+    "equipment": "nenhum",
+    "difficulty": "intermediário",
+    "instructions": "Execute o movimento de Bear Crawl focando na contração muscular e controle do ritmo.",
+    "demoUrl": "https://cdn.fitnessapp/videos/bear-crawl.mp4"
+  }
+]
