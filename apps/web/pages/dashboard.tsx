@@ -1,28 +1,26 @@
-import { useSession } from 'next-auth/react';
-import { signIn, signOut } from 'next-auth/react';
-import Stripe from 'stripe';
+"use client";
+
+import { useSession, signIn, signOut } from 'next-auth/react';
+
+export const dynamic = "force-dynamic";
 
 export default function Dashboard() {
-  const { data: session } = useSession();
+  const sessionData = useSession(); const session = sessionData?.data;
 
-  if (!session) {
+  if (session) {
     return (
-      <div>
-        <h1>Welcome to Team Spancerski</h1>
-        <button onClick={() => signIn('google')}>Login with Google</button>
-      </div>
+      <>
+        <p>Signed in as {session.user?.email}</p>
+        <button onClick={() => signOut()}>Sign out</button>
+        <p>TeamSpancerski Dashboard</p>
+      </>
     );
   }
 
   return (
-    <div>
-      <h1>Welcome, {session.user?.name}</h1>
-      <button onClick={() => signOut()}>Logout</button>
-      <h2>Subscription Plans</h2>
-      <ul>
-        <li>Annual Plan: R$1199</li>
-        <li>Quarterly Plan: R$349</li>
-      </ul>
-    </div>
+    <>
+      <p>Not signed in</p>
+      <button onClick={() => signIn()}>Sign in</button>
+    </>
   );
 }
