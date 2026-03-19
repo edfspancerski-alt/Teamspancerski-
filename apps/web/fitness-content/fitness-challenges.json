@@ -1,0 +1,19 @@
+{
+  "challenges": [
+    {
+      "name": "30-Day Push-Up Challenge",
+      "description": "Increase your push-up count every day for 30 days.",
+      "dailyGoal": "Add 2 push-ups each day."
+    },
+    {
+      "name": "Plank Challenge",
+      "description": "Hold a plank for longer each day.",
+      "dailyGoal": "Increase plank duration by 10 seconds daily."
+    },
+    {
+      "name": "Squat Challenge",
+      "description": "Build lower body strength with daily squats.",
+      "dailyGoal": "Add 5 squats each day."
+    }
+  ]
+}

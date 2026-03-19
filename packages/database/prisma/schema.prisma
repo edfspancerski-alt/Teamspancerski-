@@ -1,247 +1,53 @@
-generator client {
-  provider = "prisma-client-js"
-}
-
+// prisma/schema.prisma
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  // 
 }
 
-// --- CORE & MULTI-TENANCY ---
-enum Role {
-  ADMIN
-  COACH
-  MEMBER
+model Exercise {
+  id                String   @id @default(cuid())
+  name              String
+  slug              String   @unique
+  muscleGroups      String[]
+  secondaryMuscles  String[]
+  equipment         String
+  difficulty        String
+  exerciseType      String
+
+  instructions      String
+  executionSteps    String[]
+  tempo             String
+  tips              String[]
+  commonMistakes    String[]
+  safetyNotes       String[]
+
+  videoUrl          String?
+  videoTitle        String?
+  videoDescription  String?
+  videoDuration     Int?
+
+  restTime          Int
+  pacholokTechnique String
 }
 
-model Tenant {
-  id            String   @id @default(cuid())
-  name          String
-  slug          String   @unique
-  logo          String?
-  primaryColor  String?
-  domain        String?  @unique
-  users         User[]
-  programs      Program[]
-  challenges    Challenge[]
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
-}
-
-model User {
-  id              String    @id @default(cuid())
-  email           String    @unique
-  password        String
-  name            String?
-  role            Role      @default(MEMBER)
-
-  // Profile & Behavioral Memory
-  profile         Profile?
-  memory          UserMemory?
-  consistency     Float     @default(1.0) // 0.0 to 1.0 based on adherence
-  complianceScore Float     @default(1.0)
-
-  // Training & Progress
-  sessions        WorkoutSession[]
-  logs            WorkoutLog[]
-  progress        Progress[]
-  bodyAnalyses    BodyAnalysis[]
-  videoAnalyses   VideoAnalysis[]
-
-  // Social & Community
-  conversations   AIConversation[]
-
-  // Gamification
-  xp              Int       @default(0)
-  streak          Int       @default(0)
-  level           Int       @default(1)
-
-  // Growth & Monetization
-  subscriptions   Subscription[]
-  affiliate       Affiliate?
-  referrals       Referral[] @relation("ReferredBy")
-  referredBy      Referral?  @relation("ReferredUser")
-
-  // System
-  tenantId        String
-  tenant          Tenant    @relation(fields: [tenantId], references: [id])
-  notifications   Notification[]
-  activity        UserActivity[]
-
-  createdAt       DateTime  @default(now())
-  updatedAt       DateTime  @updatedAt
-}
-
-model Profile {
-  id              String   @id @default(cuid())
-  age             Int?
-  gender          String?
-  height          Float?
-  weight          Float?
-  goal            String?
-  experience      String?
-  equipment       Json?
-  userId          String   @unique
-  user            User     @relation(fields: [userId], references: [id])
-}
-
-// --- AI MEMORY & RAG ---
-model UserMemory {
-  id              String   @id @default(cuid())
-  context         Json     // Behavioral patterns, favorites, weak muscles
-  summary         String?  // LLM generated summary of user history
-  embedding       Unsupported("vector(1536)")? // Using pgvector for RAG
-  userId          String   @unique
-  user            User     @relation(fields: [userId], references: [id])
-  updatedAt       DateTime @updatedAt
-}
-
-model KnowledgeBase {
-  id              String   @id @default(cuid())
-  title           String
-  content         String
-  category        String   // EXERCISE, NUTRITION, RECOVERY
-  embedding       Unsupported("vector(1536)")?
-  createdAt       DateTime @default(now())
-}
-
-model AIConversation {
-  id              String   @id @default(cuid())
-  messages        Json     // History of chat
-  userId          String
-  user            User     @relation(fields: [userId], references: [id])
-  updatedAt       DateTime @updatedAt
-}
-
-// --- TRAINING & ANALYSIS ---
 model Program {
-  id              String   @id @default(cuid())
-  title       String
-  description String?
-  tenantId    String
-  tenant      Tenant   @relation(fields: [tenantId], references: [id])
-  modules     Module[]
-  challenges  Challenge[]
-  createdAt   DateTime @default(now())
-}
+  id                String   @id @default(cuid())
+  title             String
+  description       String
+  duration          Int
+  difficulty        String
+  gender            String
+  level             String
+  weeklySplit       String
+  progression       String
 
-model Module {
-  id          String   @id @default(cuid())
-  title       String
-  order       Int
-  programId   String
-  program     Program  @relation(fields: [programId], references: [id])
-  lessons     Lesson[]
-}
+  weeklyStructure   Json
 
-model Lesson {
-  id          String   @id @default(cuid())
-  title       String
-  videoUrl    String
-  moduleId    String
-  module      Module   @relation(fields: [moduleId], references: [id])
-  progress    Progress[]
-}
+  equipmentRequired String
+  environment       String
 
-model WorkoutSession {
-  id          String   @id @default(cuid())
-  userId      String
-  user        User     @relation(fields: [userId], references: [id])
-  logs        WorkoutLog[]
-  createdAt   DateTime @default(now())
-}
-
-model WorkoutLog {
-  id          String   @id @default(cuid())
-  exercise    String
-  sets        Int
-  reps        Int
-  load        Float
-  sessionId   String
-  session     WorkoutSession @relation(fields: [sessionId], references: [id])
-  userId      String
-  user        User     @relation(fields: [userId], references: [id])
-  createdAt   DateTime @default(now())
-}
-
-model Progress {
-  id          String   @id @default(cuid())
-  completed   Boolean  @default(false)
-  userId      String
-  user        User     @relation(fields: [userId], references: [id])
-  lessonId    String
-  lesson      Lesson   @relation(fields: [lessonId], references: [id])
-}
-
-model BodyAnalysis {
-  id          String   @id @default(cuid())
-  metrics     Json     // Fat, symmetry, weak points
-  userId      String
-  user        User     @relation(fields: [userId], references: [id])
-  createdAt   DateTime @default(now())
-}
-
-model VideoAnalysis {
-  id          String   @id @default(cuid())
-  feedback    String
-  metrics     Json     // Angles, ROM, tempo
-  userId      String
-  user        User     @relation(fields: [userId], references: [id])
-  createdAt   DateTime @default(now())
-}
-
-// --- MONETIZATION & GROWTH ---
-model Subscription {
-  id          String   @id @default(cuid())
-  stripeId    String   @unique
-  status      String
-  userId      String
-  user        User     @relation(fields: [userId], references: [id])
-  createdAt   DateTime @default(now())
-}
-
-model Affiliate {
-  id          String   @id @default(cuid())
-  code        String   @unique
-  userId      String   @unique
-  user        User     @relation(fields: [userId], references: [id])
-  referrals   Referral[]
-}
-
-model Referral {
-  id              String   @id @default(cuid())
-  affiliateId     String
-  affiliate       Affiliate @relation(fields: [affiliateId], references: [id])
-  referredUserId  String    @unique
-  referredUser    User      @relation("ReferredUser", fields: [referredUserId], references: [id])
-  userId          String?
-  user            User?     @relation("ReferredBy", fields: [userId], references: [id])
-}
-
-model Challenge {
-  id          String   @id @default(cuid())
-  name        String
-  tenantId    String
-  tenant      Tenant   @relation(fields: [tenantId], references: [id])
-  programId   String?
-  program     Program? @relation(fields: [programId], references: [id])
-}
-
-// --- SYSTEM ---
-model Notification {
-  id          String   @id @default(cuid())
-  title       String
-  body        String
-  userId      String
-  user        User     @relation(fields: [userId], references: [id])
-  createdAt   DateTime @default(now())
-}
-
-model UserActivity {
-  id          String   @id @default(cuid())
-  type        String
-  meta        Json?
-  userId      String
-  user        User     @relation(fields: [userId], references: [id])
-  createdAt   DateTime @default(now())
+  phase1            Json
+  phase2            Json
+  phase3            Json
+  phase4            Json
 }

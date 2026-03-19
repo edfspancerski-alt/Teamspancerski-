@@ -1,0 +1,31 @@
+{
+  "workoutPlans": [
+    {
+      "level": "beginner",
+      "plan": [
+        { "day": 1, "exercise": "Push-ups", "reps": 10 },
+        { "day": 1, "exercise": "Squats", "reps": 15 },
+        { "day": 2, "exercise": "Plank", "duration": "30 seconds" },
+        { "day": 2, "exercise": "Jumping Jacks", "reps": 20 }
+      ]
+    },
+    {
+      "level": "intermediate",
+      "plan": [
+        { "day": 1, "exercise": "Pull-ups", "reps": 5 },
+        { "day": 1, "exercise": "Lunges", "reps": 20 },
+        { "day": 2, "exercise": "Burpees", "reps": 15 },
+        { "day": 2, "exercise": "Mountain Climbers", "duration": "1 minute" }
+      ]
+    },
+    {
+      "level": "advanced",
+      "plan": [
+        { "day": 1, "exercise": "Deadlifts", "reps": 10 },
+        { "day": 1, "exercise": "Bench Press", "reps": 10 },
+        { "day": 2, "exercise": "Snatch", "reps": 5 },
+        { "day": 2, "exercise": "Clean and Jerk", "reps": 5 }
+      ]
+    }
+  ]
+}
